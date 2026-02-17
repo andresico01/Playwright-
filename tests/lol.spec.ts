@@ -1,4 +1,4 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { Actor } from '@actors/Actor';
 import { PressHeaderOption } from '@tasks/PressHeaderOption';
 import {BrowseLolPage} from '@tasks/GoHomePage';
@@ -6,6 +6,7 @@ import {checkChampionPage} from '@questions/CheckElementWeb';
 import { CheckHomePage } from '@questions/CheckHomePage';
 import {AkaliTarget} from '@ui/Homeui';
 import { ScrollToElement } from '@interactions/Scroll';
+import { checkChampionsPage } from '@ui/Championsui';
 
 test('Press Header Option Test', async ({ page }) => {
     const actor = Actor.named('John', page);    
@@ -13,7 +14,7 @@ test('Press Header Option Test', async ({ page }) => {
     await actor.attemptsTo(
     BrowseLolPage.goToHomePage(),
     PressHeaderOption('champions'),
-    checkChampionPage()
+    checkChampionPage(checkChampionsPage.Title,'CAMPEÓN')
     );
 
 });

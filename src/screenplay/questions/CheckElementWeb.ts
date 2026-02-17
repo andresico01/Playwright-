@@ -1,7 +1,6 @@
 import { Actor } from "@actors/Actor";
-import { checkChampionsPage } from "@ui/Chapionsui";
+import { expect } from "@playwright/test";
 
-export const checkChampionPage = () => async (actor: Actor): Promise<void> => {
-    const selector = checkChampionsPage.Title;
-    await actor.page.waitForSelector(selector);
+export const checkChampionPage = (webElement: string,checkValue: string) => async (actor: Actor): Promise<void> => {
+    await expect(actor.page.locator(webElement)).toHaveText(checkValue);
 };
