@@ -13,10 +13,12 @@ steps:
 - script: npm ci
   displayName: '2. Instalar librerías del proyecto'
 
+- script: npx playwright install --with-deps
+  displayName: 'Instalar Navegadores de Playwright'
 
 - script: |
     npx playwright test
-  displayName: '3. Ejecutar Cypress E2E'
+  displayName: '3. Ejecutar Playwright E2E'
   continueOnError: true
 
 
