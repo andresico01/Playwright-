@@ -1,0 +1,1 @@
+usado apra hacer diagnmostidos de configuracion del proyecto npx tsc --noEmit

@@ -1,0 +1,17 @@
+// playwright.config.ts
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+        // Graba todo el test
+  reporter: [['html', { open: 'never' }]], // Esto obligará a abrirlo al terminar
+  use: {
+    trace: 'on',           // ⬅️ ESTO ES ORO. Registra cada micro-paso.
+    video: 'on',   
+    screenshot: 'on',    
+  },
+  fullyParallel: true, 
+
+  workers: process.env.CI ? 2 : undefined,
+
+  outputDir: 'test-results/', // Carpeta para videos y capturas
+});

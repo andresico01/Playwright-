@@ -1,0 +1,28 @@
+trigger:
+- trunk
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '22.x'
+  displayName: '1. Instalar Node.js'
+
+- script: npm ci
+  displayName: '2. Instalar librerías del proyecto'
+
+
+- script: |
+    npx playwright test
+  displayName: '3. Ejecutar Cypress E2E'
+  continueOnError: true
+
+
+- task: PublishHtmlReport@1
+  condition: always()
+  inputs:
+    reportDir: '$(System.DefaultWorkingDirectory)/playwright-report/index.html'
+    tabName: 'Reporte Playwright'
+  displayName: '4. Publicar Pestaña HTML'
