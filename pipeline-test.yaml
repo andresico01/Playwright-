@@ -28,3 +28,9 @@ steps:
     reportDir: '$(System.DefaultWorkingDirectory)/playwright-report/index.html'
     tabName: 'Reporte Playwright'
   displayName: '4. Publicar Pestaña HTML'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: 'results.xml'
+  displayName: '5. Publicar Resultados de Pruebas'

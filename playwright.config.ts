@@ -3,7 +3,10 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
         // Graba todo el test
-  reporter: [['html', { open: 'never' }]], // Esto obligará a abrirlo al terminar
+  reporter: [
+  ['html'],
+  ['junit', { outputFile: 'results.xml' }]
+], // Esto obligará a abrirlo al terminar
   use: {
     trace: 'on',           // ⬅️ ESTO ES ORO. Registra cada micro-paso.
     video: 'on',   

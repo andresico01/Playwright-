@@ -1,0 +1,26 @@
+<testsuites id="" name="" tests="2" failures="0" skipped="0" errors="0" time="7.220058">
+<testsuite name="tests\lol.spec.ts" timestamp="2026-02-17T08:43:40.322Z" hostname="" tests="2" failures="0" skipped="0" time="8.864" errors="0">
+<testcase name="Press Header Option Test" classname="tests\lol.spec.ts" time="4.95">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-lol-Press-Header-Option-Test\test-finished-1.png]]
+
+[[ATTACHMENT|test-results\tests-lol-Press-Header-Option-Test\video.webm]]
+
+[[ATTACHMENT|test-results\tests-lol-Press-Header-Option-Test\trace.zip]]
+]]>
+</system-out>
+</testcase>
+<testcase name="Check element in home page" classname="tests\lol.spec.ts" time="3.914">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\tests-lol-Check-element-in-home-page\test-finished-1.png]]
+
+[[ATTACHMENT|test-results\tests-lol-Check-element-in-home-page\video.webm]]
+
+[[ATTACHMENT|test-results\tests-lol-Check-element-in-home-page\trace.zip]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
