@@ -32,7 +32,7 @@ steps:
 - task: AzureCLI@2
   displayName: 'Subir reporte desde Linux a Azure Storage'
   inputs:
-    azureSubscription: 'reports' # Tu Service Connection ARM
+    azureSubscription: 'be8d8112-b458-4190-940f-a0df6df7e755' # Tu Service Connection ARM
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
     inlineScript: |
