@@ -29,6 +29,21 @@ steps:
     tabName: 'Reporte Playwright'
   displayName: '4. Publicar Pestaña HTML'
 
+- task: AzureCLI@2
+  displayName: 'Subir reporte desde Linux a Azure Storage'
+  inputs:
+    azureSubscription: 'Conexion-Azure-Andres' # Tu Service Connection ARM
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: |
+      # Usamos az storage blob upload-batch para subir toda la carpeta
+      az storage blob upload-batch \
+        --destination '$web' \
+        --source 'playwright-report' \
+        --account-name 'adrojasreports' \
+        --auth-mode login
+  condition: always()
+
 - task: PublishTestResults@2
   inputs:
     testResultsFormat: 'JUnit'
