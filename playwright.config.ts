@@ -10,8 +10,6 @@ export default defineConfig({
 ], // Esto obligará a abrirlo al terminar
   use: {
     baseURL: 'https://www.leagueoflegends.com/es-es/', 
-    locale: 'es-ES', // Fuerza el idioma
-    timezoneId: 'Europe/Madrid',
     trace: 'on',           // ⬅️ ESTO ES ORO. Registra cada micro-paso.
     video: 'on',   
     screenshot: 'on',   
